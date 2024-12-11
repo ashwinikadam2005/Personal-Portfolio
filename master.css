@@ -1,0 +1,533 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    /* color: #333; */
+    background: url('https://img.freepik.com/free-photo/top-view-monochromatic-leaves-with-copy-space_23-2148770315.jpg?ga=GA1.1.329591539.1733745665&semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    /* padding: 1rem; */
+    text-align: center; /* Centers all text */
+
+}
+
+/* Header */
+.header {
+    color: navy;
+    /* padding: 1rem 0; */
+    text-align: center;
+}
+.header .container .profile p{
+    color:#4e45ee;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 200px;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 340px;
+object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    margin-top: 70px;
+}
+
+
+.pulsating-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fly-in 1.5s ease-out forwards, pulse 2s infinite alternate, gradient-shift 6s infinite;
+}
+
+/* Flying in animation */
+@keyframes fly-in {
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Pulsating animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Gradient shift animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.projects .container {
+    display: flex;
+    flex-wrap: calc(40%);
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.projects .container .project-card{
+    background-color: plum;
+    border-radius: 4px;
+    text-align: center;
+}
+.projects .container .project-card:hover{
+    transform: scale(1.03);
+    background-color: #918def;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+.projects .container .project-card img{
+    height: 350px;
+    width: 550px;
+
+}
+.projects .container .project-card h3{
+    color: #4a47a3;
+}
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 4px;
+}
+.social-links a{
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px  ;
+    
+}
+.social-links a button {
+    background: #6c63ff;
+    height: 40px;
+    width: 100px;
+    color: white;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.social-btn img {
+    width: 400px;
+    height: 400px;
+    transition: transform 0.6s ease;
+
+}
+/* Hover Effects */
+.social-btn:hover {
+    background-color: #6c63ff;
+    /* transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(108, 99, 255, 0.4); */
+}
+
+.social-btn:hover img {
+    transform: scale(1.02);
+}
+
+.social-btn:hover button {
+    background-color: #4a47a3;
+}
+
+
+/* General Reset for the header navigation */
+.nav {
+    width: 100%;
+    background: linear-gradient(to right, #6c63ff, #9d97ff); /* Gradient matching your website's theme */
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(108, 99, 255, 0.2);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links Container */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    transition: all 0.3s ease;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effects for Links */
+.nav-links a:hover {
+    color: #ffd700; /* Gold color for emphasis */
+    transform: translateY(-3px);
+}
+
+/* Social media links visibility */
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Responsive Menu Button - Hidden for mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Responsive design for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(to bottom, #6c63ff, #9d97ff);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border: 1px solid #555;
+        box-shadow: 0 4px 6px rgba(108, 99, 255, 0.3);
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+/* Skills Section */
+.skills {
+    margin: 0px 20px;
+    /* background: rgb(199, 120, 199); */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.skill-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(108, 99, 255, 0.4));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.skill-item:hover::after {
+    opacity: 1;
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: #6c63ff;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.skill-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+
+.achievement-grid, .certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.achievement-item, .certification-item {
+    background: linear-gradient(135deg, #6c63ff, #9d97ff);
+    color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.achievement-item:hover, .certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-icon, .certification-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.achievement-item p, .certification-item p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* Education Section */
+.education {
+    /* background: #fff; */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.education h2 {
+    color: #6c63ff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.education-item {
+    margin-bottom: 1.5rem;
+    background:#918def;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.education-item p {
+    font-size: 1rem;
+    color: #3b3b3b;
+    margin: 0.3rem 0;
+}
+
+/* Contact Section */
+.contact {
+    /* background: #f4f4f4; */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #6c63ff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+    outline: none;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form button {
+    padding: 0.8rem 1.5rem;
+    background: #6c63ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:  0.3s ease;
+}
+/* Decorative Dots Below Sections */
+.section-dots {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #6c63ff; /* Dark Violet Color */
+    border-radius: 50%;
+    animation: fade-in-out 1.5s infinite alternate;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.dot:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.dot:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+/* Animation for Decorative Dots */
+@keyframes fade-in-out {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.contact form button:hover {
+    background: #4a47a3;
+}
+
+/* Scroll animation effects */
+.skills,
+.projects,
+#contact {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.skills.visible,
+.projects.visible,
+#contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact form {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
